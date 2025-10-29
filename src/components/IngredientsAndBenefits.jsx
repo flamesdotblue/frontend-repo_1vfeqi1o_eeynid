@@ -187,7 +187,7 @@ function Hotspot({ top, left, active, onClick, color }) {
         } ${color === 'rose' ? 'bg-rose-500' : color === 'sky' ? 'bg-sky-500' : 'bg-indigo-500'}`}
       />
       <span
-        className={`pointer-events-none absolute inset-0 -z-[0] rounded-full opacity-70 blur-md ${
+        className={`pointer-events-none absolute inset-0 z-0 rounded-full opacity-70 blur-md ${
           color === 'rose'
             ? 'bg-rose-400/40'
             : color === 'sky'
