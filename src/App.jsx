@@ -1,28 +1,35 @@
-import { useState } from 'react'
+import React from 'react';
+import HeroScene from './components/HeroScene';
+import AboutSection from './components/AboutSection';
+import IngredientsAndBenefits from './components/IngredientsAndBenefits';
+import ShopCTA from './components/ShopCTA';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
+    <div className="font-sans antialiased text-slate-900">
+      <Navbar />
+      <HeroScene />
+      <AboutSection />
+      <IngredientsAndBenefits />
+      <ShopCTA />
     </div>
-  )
+  );
 }
 
-export default App
+function Navbar() {
+  return (
+    <header className="sticky top-0 z-50 w-full bg-white/60 backdrop-blur">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+        <a href="#" className="flex items-center gap-2">
+          <span className="inline-block h-6 w-6 rounded-full bg-gradient-to-br from-rose-400 to-sky-400" />
+          <span className="text-sm font-semibold tracking-wide text-slate-800">HIMALAYAN ROSE</span>
+        </a>
+        <nav className="hidden gap-6 text-sm text-slate-600 sm:flex">
+          <a href="#about" className="hover:text-slate-900">About</a>
+          <a href="#ingredients" className="hover:text-slate-900">Ingredients</a>
+          <a href="#shop" className="hover:text-slate-900">Shop</a>
+        </nav>
+      </div>
+    </header>
+  );
+}
